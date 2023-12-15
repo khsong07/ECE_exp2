@@ -46,7 +46,7 @@ begin
             end
             DISP_ONOFF:begin
                 if(cnt==30) state<=ENTRY_MODE;
-                LED_out<=8'b0010_0001;             
+                LED_out<=8'b0010_0000;             
             end
             ENTRY_MODE:begin
                 if(cnt==30) state<=SET_ADDRESS;

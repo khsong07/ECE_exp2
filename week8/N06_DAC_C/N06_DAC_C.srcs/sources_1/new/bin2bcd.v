@@ -7,8 +7,8 @@ output reg [11:0] bcd_out;
 
 reg[2:0] i;
 
-always @(posedge rst or posedge clk) begin
-    if(rst) begin
+always @(negedge rst or posedge clk) begin
+    if(!rst) begin
         bcd<={4'd0,4'd0,4'd0};
         i<=0;
     end
@@ -27,8 +27,8 @@ always @(posedge rst or posedge clk) begin
     end
 end
 
-always @(posedge rst or posedge clk) begin
-    if(rst) bcd_out<={4'd0,4'd0,4'd0};
+always @(negedge rst or posedge clk) begin
+    if(!rst) bcd_out<={4'd0,4'd0,4'd0};
     else if(i==0) bcd_out<=bcd;
 end
 
